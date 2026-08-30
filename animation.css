@@ -1,0 +1,69 @@
+/* =========================
+   ANIMATIONS
+========================= */
+
+/* Hero animation */
+.Hero {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Hero heading */
+.Hero h1 {
+    animation: slideUp 1s ease 0.2s both;
+}
+
+/* Hero paragraphs */
+.Hero p {
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+/* Button */
+.button {
+    animation: fadeUp 1s ease 0.6s both;
+    transition: transform 0.3s ease, backgrounds 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    background: #ddd;
+}
+
+/* Section animation */
+section:not(.hero) {
+    animation: fadeUp 1s ease both;
+}
+
+/* Project cards */
+.card {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #777;
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

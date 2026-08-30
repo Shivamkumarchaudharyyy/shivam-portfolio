@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shivam kumar chaudhary 
+        | Computer engineering student |</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css">
+
+  </head>
+  <body>
+    <nav>
+      <h2>shivam kumar chaudhary</h2>
+      <div>
+        <a href=" #about"> About</a>
+        <a href=" #projects"> Project </a>
+        <a href=" #Dream"> Dream</a>
+        <a href=" #contact"> Contact</a>
+      </div>
+    </nav>
+    <section class="Hero">
+      <p>Computer Engineering student</p>
+      <h1>
+        learning to build
+        <span> Technology that matters. </span>
+      </h1>
+      <p>
+        I'am shivam, a computer engineering student from nepal. I'am learning
+        programming and build projects step by step through learning it.
+      </p>
+      <a class="button" href="projects"> View my projects</a>
+      <section id="about" class="revel">
+        <p> About</p>
+        <h2>
+          Curious By Nature. <br/>
+          Building step by step
+        </h2>
+        <p>
+          I recently started my bachelor's journey in computer engineering. My
+          goal is to learn technology, build useful projects and grow as a
+          developer.
+        </p>
+      </section>
+      <section id="projects" class="reveal">
+        <p> projects</p>
+        <h2>What I'm building</h2>
+        <div class="project">
+          <div class="card">
+            <h3> crop managment </h3>
+            <p> Track crops, planting , and  Harvesting.</p>
+          </div>
+          <div class="card">
+            <h3> weather updates</h3>
+            <p> Get weather information </p>to plan farming activities.
+          </div>
+<div class="card reveal">
+    <h3> Market prices </h3>
+    <p> check current crop prices and market trends. </p>
+</div>
+
+<div class="card reveal">
+    <h3> farmer community</h3>
+  <p> Connect with farmers and share useful knowledge.</p>
+</div>
+      </section>
+      <section id="Dream" class="reveal">
+        <p>  | My Dream |</p>
+        <h2>
+            <p>
+                Build tecnology that 
+                <span> Solves real problems.</span>
+            </h2>
+            <p>
+                My dream is to become a computer engineer who creates technology that solves real problem and create opportunities in Nepal and beyond it.
+            </p>
+            </p>
+        </h2>
+      </section>
+      <section id="contact" class="reveal">
+        <p>  Contact  </p>
+        <h2> Let's connect.</h2>
+        <a href="mailto:shivamchaudhary2062@gmail.com"> Shivamchaudhary2062@gmail.com
+      </section>
+    <footer>
+    © 2026 Shivam chaudhary All right reserved.
+</footer>
+  <script>
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+    reveals.forEach((element) => {
+        const position = element.getBoundingClientRect().top;
+
+        if (position < window.innerHeight - 100) {
+            element.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+</script>
+  </body>
+</html>
