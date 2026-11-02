@@ -1,32 +1,64 @@
 
 
-/* PORTFOLIO CONTENT ABOVE CANVAS */
-
-nav,
-section,
-footer {
-    position: relative;
-    z-index: 1;
-}
-
-
+/* Remove old spider-web background */
 #spiderCanvas {
+    display: none;
+}
+
+/* Spidey Sense indicator */
+.spidey-sense {
     position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+    top: 18px;
+    left: 18px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 50, 50, 0.6);
+    border-radius: 30px;
+
+    background: rgba(15, 10, 12, 0.9);
+    color: white;
+
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    animation: senseGlow 2s infinite;
 }
 
-body {
-    position: relative;
-    background: #0b0d10;
+.spider-icon {
+    font-size: 27px;
+    animation: spiderPulse 1.5s infinite;
 }
 
-nav,
-section,
-footer {
-    position: relative;
-    z-index: 1;
+.sense-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sense-info strong {
+    color: #ff4444;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.sense-info small {
+    color: #ff9999;
+    font-size: 9px;
+}
+
+@keyframes senseGlow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 22px rgba(255, 0, 0, 0.7);
+    }
+}
+
+@keyframes spiderPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
