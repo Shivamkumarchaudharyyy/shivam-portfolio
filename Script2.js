@@ -1,11 +1,13 @@
 const canvas = document.getElementById("spiderCanvas");
 
 if (canvas) {
+
     const ctx = canvas.getContext("2d");
 
     let particles = [];
 
     function resize() {
+
         const dpr = window.devicePixelRatio || 1;
 
         canvas.width = window.innerWidth * dpr;
@@ -22,21 +24,39 @@ if (canvas) {
     }
 
     function animate() {
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        ctx.clearRect(
+            0,
+            0,
+            window.innerWidth,
+            window.innerHeight
+        );
 
         particles.forEach((p, i) => {
+
             p.x += p.dx;
             p.y += p.dy;
 
-            if (p.x < 0 || p.x > window.innerWidth) p.dx *= -1;
-            if (p.y < 0 || p.y > window.innerHeight) p.dy *= -1;
+            if (p.x < 0 || p.x > window.innerWidth) {
+                p.dx *= -1;
+            }
+
+            if (p.y < 0 || p.y > window.innerHeight) {
+                p.dy *= -1;
+            }
+
+            // Draw glowing particles
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+
             ctx.fillStyle = "#ffffff";
             ctx.fill();
 
+            // Connect particles
+
             for (let j = i + 1; j < particles.length; j++) {
+
                 const p2 = particles[j];
 
                 const distance = Math.hypot(
@@ -45,12 +65,14 @@ if (canvas) {
                 );
 
                 if (distance < 130) {
+
                     ctx.beginPath();
+
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
 
                     ctx.strokeStyle =
-                        `rgba(255,255,255,${1 - distance / 130})`;
+                        `rgba(180,180,180,${1 - distance / 130})`;
 
                     ctx.lineWidth = 0.6;
                     ctx.stroke();
