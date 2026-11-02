@@ -8,16 +8,22 @@ let mouse = { x: null, y: null };
 const particleCount = 100;
 const maxDistance = 140;
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
 
-    particles = Array.from({ length: particleCount }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        dx: (Math.random() - 0.5) * 0.7,
-        dy: (Math.random() - 0.5) * 0.7
-    }));
+function updatePointer(e) {
+    const touch = e.touches ? e.touches[0] : e;
+    mouse.x = touch.clientX;
+    mouse.y = touch.clientY;
+}
+
+window.addEventListener("mousemove", updatePointer);
+window.addEventListener("touchstart", updatePointer, { passive: true });
+window.addEventListener("touchmove", updatePointer, { passive: true });
+
+window.addEventListener("touchend", () => {
+    mouse.x = null;
+    mouse.y = null;
+});
+
 }
 
 window.addEventListener("resize", resizeCanvas);
