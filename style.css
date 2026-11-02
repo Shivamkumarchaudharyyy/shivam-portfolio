@@ -1,7 +1,14 @@
- {
+
+/* GENERAL RESET */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,21 +17,31 @@ body {
     color: white;
 }
 
+/* NAVIGATION */
+
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 25px 8%;
+}
+
+nav h2 {
+    font-size: 22px;
 }
 
 nav a {
     color: #aaa;
     text-decoration: none;
     margin-left: 20px;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
     color: white;
 }
+
+/* HERO */
 
 .hero {
     min-height: 80vh;
@@ -35,6 +52,7 @@ nav a:hover {
     font-size: 70px;
     max-width: 800px;
     margin: 20px 0;
+    line-height: 1.15;
 }
 
 .hero h1 span,
@@ -48,6 +66,8 @@ section h2 span {
     line-height: 1.7;
 }
 
+/* BUTTON */
+
 .button {
     display: inline-block;
     margin-top: 30px;
@@ -58,6 +78,8 @@ section h2 span {
     border-radius: 8px;
 }
 
+/* SECTIONS */
+
 section:not(.hero) {
     padding: 100px 8%;
     border-top: 1px solid #222;
@@ -67,6 +89,8 @@ section h2 {
     font-size: 50px;
     margin: 20px 0;
 }
+
+/* PROJECTS */
 
 .projects {
     display: flex;
@@ -81,55 +105,57 @@ section h2 {
     border-radius: 12px;
 }
 
+.card h3 {
+    margin: 15px 0;
+}
+
+.card h4 {
+    color: #ddd;
+}
+
 .card p {
     color: #aaa;
     margin-top: 10px;
+    line-height: 1.7;
 }
 
+/* FOOTER */
+
 footer {
-    display:flex;
+    display: flex;
     padding: 30px 0;
     justify-content: center;
     align-items: center;
+    color: #888;
 }
 
-
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 90px 8%;
+    }
+
     .hero h1 {
         font-size: 45px;
+    }
+
+    section h2 {
+        font-size: 35px;
     }
 
     .projects {
         flex-direction: column;
     }
-}
-/* =========================
-   SCROLL REVEAL
-========================= */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Project card hover */
-.card {
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #777;
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
 }
