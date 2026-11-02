@@ -1,20 +1,28 @@
 
 
-/* SPIDER BACKGROUND */
+/* PORTFOLIO CONTENT ABOVE CANVAS */
+
+nav,
+section,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
 
 #spiderCanvas {
     position: fixed;
-    top: 0;
-    left: 0;
-
+    inset: 0;
     width: 100%;
     height: 100%;
-
     pointer-events: none;
     z-index: 0;
 }
 
-/* PORTFOLIO CONTENT ABOVE CANVAS */
+body {
+    position: relative;
+    background: #0b0d10;
+}
 
 nav,
 section,
