@@ -1,3 +1,4 @@
+
 const canvas = document.getElementById("spiderCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -32,14 +33,13 @@ function animate() {
 
         for (let j = i + 1; j < particles.length; j++) {
             const p2 = particles[j];
-            const d = Math.hypot(p.x - p2.x, p.y - p2.y);
+            const distance = Math.hypot(p.x - p2.x, p.y - p2.y);
 
-            if (d < 130) {
+            if (distance < 130) {
                 ctx.beginPath();
                 ctx.moveTo(p.x, p.y);
                 ctx.lineTo(p2.x, p2.y);
-                ctx.strokeStyle =
-                    `rgba(180,180,180,${1 - d / 130})`;
+                ctx.strokeStyle = `rgba(255,255,255,${1 - distance / 130})`;
                 ctx.lineWidth = 0.6;
                 ctx.stroke();
             }
@@ -49,6 +49,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-window.addEventListener("resize", resize);
 resize();
+window.addEventListener("resize", resize);
 animate();
