@@ -133,3 +133,78 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+
+
+
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+#contact {
+    padding: 100px 8%;
+    background: #0b0d10;
+    border-top: 1px solid #222;
+    text-align: left;
+}
+
+#contact > p:first-child {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+#contact h2 {
+    color: white;
+    font-size: clamp(50px, 9vw, 90px);
+    line-height: 1.2;
+    font-weight: 700;
+    margin: 30px 0;
+}
+
+#contact a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 15px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 8px;
+    transition: 0.3s;
+}
+
+#contact a:hover {
+    color: #b5e8cc;
+    border-color: #b5e8cc;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 8%;
+    color: #777;
+    font-size: 14px;
+}
+
+footer a {
+    color: #777;
+    text-decoration: none;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+    #contact {
+        padding: 90px 8%;
+    }
+
+    #contact h2 {
+        font-size: 52px;
+    }
+
+    #contact a {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+        }
